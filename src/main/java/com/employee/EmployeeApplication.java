@@ -5,9 +5,10 @@ import com.employee.repository.EmployeeRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
-import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
@@ -39,6 +40,12 @@ public class EmployeeApplication {
 		List<Employee> salary = repo.findAll(empSalary);
 		salary.forEach(System.out::println);
 */
+		int pageNo = 1;
+		PageRequest page = PageRequest.of(pageNo-1,3);
+		Page<Employee> findAll = repo.findAll(page);
+		List<Employee> emps = findAll.getContent();
+		emps.forEach(System.out::println);
+
     }
 
 }
