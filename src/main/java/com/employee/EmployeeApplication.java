@@ -64,10 +64,13 @@ public class EmployeeApplication {
 //        int updateRecord = repo.updateEmp("Praveen", "John");
 //        System.out.println(updateRecord);
 
-        int deleteRecord = repo.deleteRecord(2);
-        System.out.println(deleteRecord);
-        System.out.println("Delete Successfully....");
+//        int deleteRecord = repo.deleteRecord(2);
+//        System.out.println(deleteRecord);
+//        System.out.println("Delete Successfully....");
 
+        int insertRecord = repo.modifyingQueryInsertEmployee(2,"Rohit","Testing",3000.00,"Scrum");
+        System.out.println(insertRecord);
+        System.out.println("Record inserted");
     }
 
 }
