@@ -48,12 +48,18 @@ public class EmployeeApplication {
 		List<Employee> emps = findAll.getContent();
 		emps.forEach(System.out::println);
 */
+/*
+
 		Employee emp = new Employee();
 		emp.setDept("Admin");
 		Example<Employee> exps = Example.of(emp);
 		List<Employee> emps = repo.findAll(exps);
 		emps.forEach(System.out::println);
-
-	}
+*/
+/*
+        List<Employee> listOfEmployees = repo.getEmps();
+        listOfEmployees.forEach(System.out::println);
+    */
+    }
 
 }
