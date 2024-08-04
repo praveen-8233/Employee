@@ -13,10 +13,10 @@ import java.util.List;
 @SpringBootApplication
 public class EmployeeApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ConfigurableApplicationContext context = SpringApplication.run(EmployeeApplication.class, args);
-		EmployeeRepository repo = context.getBean(EmployeeRepository.class);
+        ConfigurableApplicationContext context = SpringApplication.run(EmployeeApplication.class, args);
+        EmployeeRepository repo = context.getBean(EmployeeRepository.class);
 /*
 		Employee e1 = new Employee(1,"John","Admin",1500.00,"Manager");
 		Employee e2 = new Employee(2,"Robert","IT",2500.00,"Asst Manager");
@@ -29,10 +29,16 @@ public class EmployeeApplication {
 		List<Employee> s = repo.saveAll(Arrays.asList(e1, e2, e3, e4, e5, e6, e7));
 		s.forEach(System.out::println);
 		*/
-
+/*
 		Sort empName = Sort.by("empName").ascending();
 		List<Employee> list = repo.findAll(empName);
 		list.forEach(System.out::println);
-	}
+	*/
+	/*
+		Sort empSalary  = Sort.by("empSalary").ascending();
+		List<Employee> salary = repo.findAll(empSalary);
+		salary.forEach(System.out::println);
+*/
+    }
 
 }
