@@ -60,6 +60,14 @@ public class EmployeeApplication {
         List<Employee> listOfEmployees = repo.getEmps();
         listOfEmployees.forEach(System.out::println);
     */
+
+//        int updateRecord = repo.updateEmp("Praveen", "John");
+//        System.out.println(updateRecord);
+
+        int deleteRecord = repo.deleteRecord(2);
+        System.out.println(deleteRecord);
+        System.out.println("Delete Successfully....");
+
     }
 
 }
