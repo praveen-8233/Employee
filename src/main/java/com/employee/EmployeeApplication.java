@@ -5,6 +5,7 @@ import com.employee.repository.EmployeeRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -40,12 +41,19 @@ public class EmployeeApplication {
 		List<Employee> salary = repo.findAll(empSalary);
 		salary.forEach(System.out::println);
 */
+	/*
 		int pageNo = 1;
 		PageRequest page = PageRequest.of(pageNo-1,3);
 		Page<Employee> findAll = repo.findAll(page);
 		List<Employee> emps = findAll.getContent();
 		emps.forEach(System.out::println);
+*/
+		Employee emp = new Employee();
+		emp.setDept("Admin");
+		Example<Employee> exps = Example.of(emp);
+		List<Employee> emps = repo.findAll(exps);
+		emps.forEach(System.out::println);
 
-    }
+	}
 
 }
